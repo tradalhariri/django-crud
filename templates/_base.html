@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<style>
+    * {
+  padding:0;
+  margin:0;
+  list-style-type:none;
+  font-family:arial;
+}
+body{
+  background:#ccc;
+}
+.container{
+  background:#fff;
+  width:600px;
+  margin:50px auto;
+  
+}
+.container .header{
+  width:100%;
+  background:black;
+  height:70px; 
+}
+.header h1 {
+  color:#fff;
+  font-size:20px;
+  line-height:70px;
+  margin: 0 20px;
+}
+.container ul li {
+ padding:30px;
+ border-bottom:1px solid #ccc;
+}
+
+ul li h1 {
+  margin-left:50px;
+  margin-top:-20px;
+  font-size:17px;
+  font-weight:550;
+}
+ul li h2 {
+  margin-left:50px;
+  margin-top:20px;
+  font-size:17px;
+  font-weight:550;
+}
+ul li p {
+  margin-left:50px;
+  margin-top:0px;
+}
+ul li:hover {
+  background:gray;
+}
+
+td{
+    padding: 20px;
+}
+
+
+:root {
+  --input-border: #8b8a8b;
+  --input-focus-h: 245;
+  --input-focus-s: 100%;
+  --input-focus-l: 42%;
+}
+
+textarea {
+  font-size: 16px;
+
+  font-size: Max(16px, 1em);
+  font-family: inherit;
+  padding: 0.25em 0.5em;
+  background-color: #fff;
+  border: 2px solid var(--input-border);
+  border-radius: 4px;
+  transition: 180ms box-shadow ease-in-out;
+}
+textarea:focus {
+  border-color: hsl(
+    var(--input-focus-h),
+    var(--input-focus-s),
+    var(--input-focus-l)
+  );
+  box-shadow: 0 0 0 3px
+    hsla(
+      var(--input-focus-h),
+      var(--input-focus-s),
+      calc(var(--input-focus-l) + 40%),
+      0.8
+    );
+  outline: 3px solid transparent;
+}
+
+
+
+
+textarea {
+  resize: vertical;
+}
+textarea[readonly] {
+  border-style: dotted;
+  cursor: not-allowed;
+  color: #777;
+}
+
+textarea[disabled] {
+  --input-border: #ccc;
+
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+label {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+textarea + label {
+  margin-top: 2rem;
+}
+</style>
+<body>
+    
+    {% block content %} {% endblock %}
+</body>
+</html>
