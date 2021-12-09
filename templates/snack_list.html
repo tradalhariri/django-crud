@@ -5,10 +5,16 @@
 {% block content %}
 <div class="container">
     <div class="header">
-      <h1>Snack List</h1>
+      <h1>Snack List </h1>
     </h1>
+    <!-- <h2 style="display: inline-block;"></h2> -->
     </div>
 <ul>
+  <hr>
+  <hr>
+  <h2 style="padding:10px"> Add Snack <a style="text-decoration-line: none; color:#178017" href ='{% url "snack_create" %}'> + </a></h2>
+  <hr>
+  <hr>
     {% for snack in snacks %}
     <li><a href ='{{snack.get_absolute_url}}'><h1>{{snack.title}}</h1></a></li>
       {% endfor %}
