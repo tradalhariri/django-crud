@@ -1,0 +1,46 @@
+{% extends "_base.html" %}
+
+{% block title %} Snack List {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="header">
+      <h1>Snack List </h1>
+    </h1>
+    <!-- <h2 style="display: inline-block;"></h2> -->
+    </div>
+<ul>
+  <hr>
+  <hr>
+  <h2 style="padding:10px"> Add Snack <a style="text-decoration-line: none; color:#178017" href ='{% url "snack_create" %}'> + </a></h2>
+  <hr>
+  <hr>
+    {% for snack in snacks %}
+    <li><a href ='{{snack.get_absolute_url}}'><h1>{{snack.title}}</h1></a></li>
+      {% endfor %}
+
+</ul>
+</div> 
+<!-- {% for snack in snacks %}
+<h1><a href ='{{snack.get_absolute_url}}'>{{snack.title}}</a></h1>
+<h2>{{snack.purchaser}}</h2>
+<span>{{snack.description}}</span>
+{% endfor %}
+{% endblock %} -->
+
+
+<!-- 
+<div class="container">
+    <div class="header">
+      <h1>Snack List</h1>
+    </h1>
+    </div>
+    <ul>
+        {% for snack in object_list %}
+        <li><a href="{% url 'snack_detail' snack.pk %}">
+            <h1>{{snack.name}}</h1>
+          </a></li>
+          {% endfor %}
+
+    </ul>
+  </div>  -->

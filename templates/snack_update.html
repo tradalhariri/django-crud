@@ -1,0 +1,17 @@
+{% extends "_base.html" %}
+
+{% block title %} Snack Update {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="header">
+      <h1>Snack Update</h1>
+    </h1>
+    </div>
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type ="submit" value="save"/>
+</form>
+</div>
+{% endblock %}

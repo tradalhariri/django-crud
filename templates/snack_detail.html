@@ -1,0 +1,49 @@
+{% extends "_base.html" %}
+
+{% block title %} Snack Detail {% endblock %}
+
+{% block content %}
+
+<!-- <h1><a href =''>{{snack.title}}</a></h1>
+<h2>{{snack.purchaser}}</h2>
+<h3>{{snack.description}}</h3>
+<button><a href = "{{snack.get_absolute_url}}delete/">Delete</a></button>
+<button><a href = "{{snack.get_absolute_url}}update/">Update</a></button> -->
+
+
+<div class="container">
+    <div class="header">
+      <h1>Snack Detail</h1>
+    </h1>
+    </div>
+    
+  <table >
+      <thead>
+    <tr >
+      <th>Title</th>
+      <th>Purchaser</th>
+      <th>Description</th>
+      <th>Update</th>
+      <th>Delete</th>
+
+
+    </tr>
+</thead>
+<tbody>
+    <tr >
+      <td>{{snack.title}}</td>
+      <td> {{snack.purchaser}} </td>
+      <td>{{snack.description}}</td>
+      
+      <td><button><a href = "{{snack.get_absolute_url}}update/">Update</a></button></td>
+      <td><button><a href = "{{snack.get_absolute_url}}delete/">Delete</a></button></td>
+    </tr>
+</thead>
+  </table> 
+  <a  href = "{% url 'snack_list' %}">
+    <h1>Back to the snack list</h1>
+  </a>
+
+</div> 
+
+{% endblock %}
